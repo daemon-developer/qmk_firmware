@@ -25,12 +25,22 @@ enum layers {
     XTRA
 };
 
+#define _GUI_C MT(MOD_LGUI, KC_C)  // Windows when held, 'C' when tapped
+#define _ALT_I MT(MOD_LALT, KC_I)  // Alt when held, 'I' when tapped
+#define _CTL_E MT(MOD_LCTL, KC_E)  // Control when held, 'E' when tapped
+#define _SHF_A MT(MOD_LSFT, KC_A)  // Shift when held, 'A' when tapped
+
+#define _SHF_H MT(MOD_LSFT, KC_H)  // Shift when held, 'H' when tapped
+#define _CTL_T MT(MOD_LCTL, KC_T)  // Control when held, 'T' when tapped
+#define _ALT_S MT(MOD_LALT, KC_S)  // Alt when held, 'S' when tapped
+#define _GUI_N MT(MOD_LGUI, KC_N)  // Windows when held, 'CN when tapped
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_TAB,    KC_B,    KC_Y,    KC_O,    KC_U,    KC_T,                         KC_Y,    KC_L,    KC_D,    KC_W,   KC_V,     KC_Z,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL,    KC_C,    KC_I,    KC_E,    KC_A,    KC_G,                         KC_H,    KC_H,    KC_T,    KC_S,   KC_N,    KC_Q,
+      KC_LCTL,  _GUI_C,  _ALT_I,  _CTL_E,  _SHF_A,    KC_G,                         KC_H,  _SHF_H,  _CTL_T,  _ALT_S,   GUI_N,    KC_Q,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_G,    KC_X,    KC_J,    KC_K,    KC_B,                         KC_R,    KC_M,    KC_F,    KC_P, KC_SLSH,  KC_ESC,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
